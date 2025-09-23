@@ -79,8 +79,6 @@ public class OdsSqlserverToPaimonS3APP1 {
         TableResult tableResult = tableEnv.executeSql("INSERT INTO Orders SELECT * FROM InventoryINVOrders;");
         if (tableResult.getJobClient().isPresent()) log.info("----------"+tableResult.getJobClient().get().getJobStatus());
 
-        // tableEnv.sqlQuery("SELECT * FROM Orders;").execute().print();
-
     }
 
 }
