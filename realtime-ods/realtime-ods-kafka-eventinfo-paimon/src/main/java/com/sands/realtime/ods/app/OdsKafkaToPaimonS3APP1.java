@@ -33,7 +33,7 @@ public class OdsKafkaToPaimonS3APP1 {
 
         tableEnv.executeSql("USE inventory;");
 
-        tableEnv.executeSql("CREATE TEMPORARY TABLE OdsOrdersTopic\n" +
+        tableEnv.executeSql("CREATE TEMPORARY TABLE OrdersKafkaSource\n" +
                 "(\n" +
                 "    id              BIGINT,\n" +
                 "    order_id        STRING,\n" +
@@ -81,10 +81,10 @@ public class OdsKafkaToPaimonS3APP1 {
                 "    PRIMARY KEY (id) NOT ENFORCED\n" +
                 "    );");
 
-        TableResult tableResult = tableEnv.executeSql("INSERT INTO OrdersFromKafka SELECT * FROM OdsOrdersTopic;");
+        TableResult tableResult = tableEnv.executeSql("INSERT INTO OrdersFromKafka SELECT * FROM OrdersKafkaSource;");
         if (tableResult.getJobClient().isPresent()) log.info("----------"+tableResult.getJobClient().get().getJobStatus());
 
-        tableEnv.sqlQuery("select * from OrdersFromKafka").execute().print();
+        // tableEnv.sqlQuery("select * from OrdersFromKafka").execute().print();
 
     }
 }

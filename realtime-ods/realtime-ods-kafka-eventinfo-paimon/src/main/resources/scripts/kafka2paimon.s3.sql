@@ -13,7 +13,7 @@ CREATE DATABASE IF NOT EXISTS inventory;
 
 USE inventory;
 
-CREATE TEMPORARY TABLE OdsOrdersTopic
+CREATE TEMPORARY TABLE orders_kafka_source
 (
     id              BIGINT,
     order_id        STRING,
@@ -40,7 +40,7 @@ CREATE TEMPORARY TABLE OdsOrdersTopic
       'scan.startup.mode' = 'earliest-offset',
       'format' = 'json');
 
-CREATE TABLE IF NOT EXISTS orders (
+CREATE TABLE IF NOT EXISTS orders_from_kafka (
     id              BIGINT,
     order_id        STRING,
     supplier_id     INT,
@@ -65,4 +65,4 @@ CREATE TABLE IF NOT EXISTS orders (
 -- execution.checkpointing.interval: default - none, The base interval setting. To enable checkpointing, you need to set this value larger than 0.
 -- SET 'execution.checkpointing.interval' = '10 s';
 
-INSERT INTO orders SELECT * FROM sqlserver_source;
+INSERT INTO orders_from_kafka SELECT * FROM orders_kafka_source;
