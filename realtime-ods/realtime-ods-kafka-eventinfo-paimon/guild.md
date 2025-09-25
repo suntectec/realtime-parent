@@ -4,6 +4,6 @@ scp target/realtime-ods-kafka-eventinfo-paimon-1.0-SNAPSHOT.jar Data.Eng@192.168
 
 ```
 $FLINK_HOME/bin/flink run -d \
--c com.sands.realtime.ods.app.OdsSinkToPaimonAPP \
+-c com.sands.realtime.ods.app.OdsKafkaToPaimonS3APP \
 $FLINK_HOME/usrlib/realtime-ods-kafka-eventinfo-paimon-1.0-SNAPSHOT.jar
 ```
