@@ -47,7 +47,7 @@ public class FlinkSQLExecutor {
                 continue;
             }
             if (sql.toLowerCase(Locale.ROOT).startsWith("create")) {
-                System.out.println("----------------------------------------------\nexecuteSql=\n" + sql);
+                System.out.println("----------------------------------------------\ncreate=\n" + sql);
                 tableEnv.executeSql(sql);
             } else if (sql.toLowerCase(Locale.ROOT).startsWith("use")) {
                 System.out.println("----------------------------------------------\nuse=\n" + sql);

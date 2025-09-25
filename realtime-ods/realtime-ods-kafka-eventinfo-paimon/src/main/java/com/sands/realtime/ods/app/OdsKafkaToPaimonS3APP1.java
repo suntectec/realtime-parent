@@ -33,8 +33,7 @@ public class OdsKafkaToPaimonS3APP1 {
 
         tableEnv.executeSql("USE inventory;");
 
-        tableEnv.executeSql("CREATE TEMPORARY TABLE OrdersKafkaSource\n" +
-                "(\n" +
+        tableEnv.executeSql("CREATE TEMPORARY TABLE OrdersKafkaSource (\n" +
                 "    id              BIGINT,\n" +
                 "    order_id        STRING,\n" +
                 "    supplier_id     INT,\n" +

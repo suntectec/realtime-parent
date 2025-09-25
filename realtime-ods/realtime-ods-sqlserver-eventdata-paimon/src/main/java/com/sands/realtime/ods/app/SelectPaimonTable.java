@@ -28,7 +28,7 @@ public class SelectPaimonTable {
 
         tableEnv.executeSql("USE inventory;");
 
-        tableEnv.sqlQuery("SELECT * FROM orders;").execute().print();
+        tableEnv.sqlQuery("SELECT * FROM orders_from_sqlserver;").execute().print();
 
     }
 }
