@@ -1,4 +1,4 @@
-package com.sands.realtime.common.utils;
+package com.sands.realtime.ads.app;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.flink.api.java.utils.ParameterTool;
