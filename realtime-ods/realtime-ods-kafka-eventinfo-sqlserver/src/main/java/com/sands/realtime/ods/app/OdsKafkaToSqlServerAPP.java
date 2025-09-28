@@ -14,6 +14,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * 执行 SQL 脚本
+ *
  * @author Jagger
  * @since 2025/9/12 15:28
  */

@@ -4,6 +4,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
 /**
+ * 查询 Paimon 表
+ *
  * @author Jagger
  * @since 2025/9/11 17:51
  */

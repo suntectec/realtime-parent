@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.Locale;
 
 /**
+ * 执行上传的 SQL 脚本
+ *
  * flink run 形式指定 sql script:
  * 当作业的SQL语句修改频繁时，可使用Flink Jar的方式提交Flink SQL语句，以减少用户工作量。
  *  1、使用 ; 分号作为 sql script 的 sql 分隔符，不处理 -- 注释，读取不带注释的 .sql 文件更清晰方便

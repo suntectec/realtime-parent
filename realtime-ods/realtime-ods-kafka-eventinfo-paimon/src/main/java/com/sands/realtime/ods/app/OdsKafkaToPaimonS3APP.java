@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 执行 SQL 脚本
+ *
  * @author Jagger
  * @since 2025/9/25 10:11
  */
