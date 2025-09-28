@@ -1,6 +1,7 @@
 package com.sands.realtime.ods.app;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.flink.streaming.api.environment.LocalStreamEnvironment;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.TableResult;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
@@ -78,10 +79,13 @@ public class OdsSqlserverToPaimonS3APP1 {
                 "    PRIMARY KEY (id) NOT ENFORCED\n" +
                 ");");
 
-        TableResult tableResult = tableEnv.executeSql("INSERT INTO Orders SELECT * FROM InventoryINVOrders;");
-        if (tableResult.getJobClient().isPresent()) log.info("----------"+tableResult.getJobClient().get().getJobStatus());
 
-        // tableEnv.sqlQuery("select * from Orders").execute().print();
+        if (streamEnv instanceof LocalStreamEnvironment) {
+            tableEnv.sqlQuery("select * from Orders").execute().print();
+        } else {
+            TableResult tableResult = tableEnv.executeSql("INSERT INTO Orders SELECT * FROM InventoryINVOrders;");
+            if (tableResult.getJobClient().isPresent()) log.info("----------"+tableResult.getJobClient().get().getJobStatus());
+        }
 
     }
 
