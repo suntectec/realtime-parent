@@ -9,20 +9,16 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>realtime-ads</artifactId>
+    <artifactId>realtime-e2e</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>realtime-e2e-sqlserver-to-paimon</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>com.sands</groupId>
-            <artifactId>realtime-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
 </project>

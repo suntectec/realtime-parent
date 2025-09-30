@@ -13,6 +13,7 @@
         <module>realtime-common</module>
         <module>realtime-ods</module>
         <module>realtime-ads</module>
+        <module>realtime-e2e</module>
     </modules>
 
     <properties>
